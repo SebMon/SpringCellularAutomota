@@ -5,20 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9f800104-a1e8-4a93-b910-64722136ea1b" name="Changes" comment="Simple conway simulation, and drawing whatever cells are in world">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayPlugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/Main.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/Cell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/GameData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/Position.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/World.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/services/IPlugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/services/IProcessor.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/core/Game.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/core/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,7 +80,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1658589931916</updated>
-      <workItem from="1658589938085" duration="16224000" />
+      <workItem from="1658589938085" duration="17880000" />
     </task>
     <task id="LOCAL-00001" summary="Setup">
       <created>1658590007852</created>
@@ -99,7 +89,14 @@
       <option name="project" value="LOCAL" />
       <updated>1658590007852</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Simple conway simulation, and drawing whatever cells are in world">
+      <created>1659008241596</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1659008241597</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

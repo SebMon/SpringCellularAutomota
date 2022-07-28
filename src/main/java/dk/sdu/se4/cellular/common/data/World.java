@@ -12,7 +12,7 @@ public class World {
     }
 
     public boolean isPositionEmpty(Position pos) {
-        return cells.containsKey(pos);
+        return !cells.containsKey(pos);
     }
 
     public Cell getCell(Position pos) {

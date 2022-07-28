@@ -36,42 +36,42 @@ public class ConwayProcessor implements IProcessor {
     private short aliveNeighbours(Position pos, World world) {
         short neighbours = 0;
         // Top left
-        if (world.getCell(new Position(pos.x - 1, pos.y + 1)) != null) {
+        if (!world.isPositionEmpty(new Position(pos.x - 1, pos.y + 1))) {
             neighbours += 1;
         }
 
         // Top
-        if (world.getCell(new Position(pos.x, pos.y + 1)) != null) {
+        if (!world.isPositionEmpty(new Position(pos.x, pos.y + 1))) {
             neighbours += 1;
         }
 
         // Top right
-        if (world.getCell(new Position(pos.x + 1, pos.y - 1)) != null) {
+        if (!world.isPositionEmpty(new Position(pos.x + 1, pos.y - 1))) {
             neighbours += 1;
         }
 
         // Left
-        if (world.getCell(new Position(pos.x - 1, pos.y)) != null) {
+        if (!world.isPositionEmpty(new Position(pos.x - 1, pos.y))) {
             neighbours += 1;
         }
 
         // Right
-        if (world.getCell(new Position(pos.x + 1, pos.y )) != null) {
+        if (!world.isPositionEmpty(new Position(pos.x + 1, pos.y ))) {
             neighbours += 1;
         }
 
         // Bottom left
-        if (world.getCell(new Position(pos.x - 1, pos.y - 1)) != null) {
+        if (!world.isPositionEmpty(new Position(pos.x - 1, pos.y - 1))) {
             neighbours += 1;
         }
 
         // Bottom
-        if (world.getCell(new Position(pos.x, pos.y - 1)) != null) {
+        if (!world.isPositionEmpty(new Position(pos.x, pos.y - 1))) {
             neighbours += 1;
         }
 
         // Bottom right
-        if (world.getCell(new Position(pos.x + 1, pos.y - 1)) != null) {
+        if (!world.isPositionEmpty(new Position(pos.x + 1, pos.y - 1))) {
             neighbours += 1;
         }
 

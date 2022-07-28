@@ -25,8 +25,6 @@ public class Game implements ApplicationListener {
     private Texture texture;
     private GameData gameData;
     private World world;
-
-    // Add plugin and processor here
     private final ArrayList<IProcessor> processors = new ArrayList<>();
     private final ArrayList<IPlugin> plugins = new ArrayList<>();
 
