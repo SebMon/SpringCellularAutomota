@@ -8,6 +8,7 @@ import dk.sdu.se4.cellular.common.data.World;
 import dk.sdu.se4.cellular.common.services.IPlugin;
 import org.springframework.stereotype.Component;
 
+import java.util.HashMap;
 import java.util.Random;
 
 @Component
@@ -16,13 +17,15 @@ public class ConwayPlugin implements IPlugin {
     @Override
     public void start(GameData gameData, World world) {
         Random random = new Random();
-        for (int x = 0; x < gameData.getWindowWidth(); x++) {
-            for (int y = 0; y < gameData.getWindowHeight(); y++) {
+        HashMap<Position, Cell> cells = new HashMap<>();
+        for (int x = 0; x < gameData.getGameWidth(); x++) {
+            for (int y = 0; y < gameData.getGameHeight(); y++) {
                 if (random.nextBoolean()) {
-                    world.addCell(new ConwayCell(new Position(x, y), color));
+                    cells.put(new Position(x, y), new ConwayCell(new Position(x, y), color));
                 }
             }
         }
+        world.setCells(cells);
     }
 
     @Override

@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f800104-a1e8-4a93-b910-64722136ea1b" name="Changes" comment="Using already implemented function to check if cell is null or not" />
+    <list default="true" id="9f800104-a1e8-4a93-b910-64722136ea1b" name="Changes" comment="Using already implemented function to check if cell is null or not">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/services/IInputHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/core/GameInputManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayProcessor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/GameData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/core/Game.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -29,18 +39,19 @@
   <component name="ProjectViewState">
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/home/sebastian/Desktop/Practice/SpringCellularAutomota/lwjgl-release-3.3.1-custom/lwjgl.jar",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.16210938",
-    "project.structure.side.proportion": "0.5149425",
-    "settings.editor.selected.configurable": "MavenSettings"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/home/sebastian/Desktop/Practice/SpringCellularAutomota/lwjgl-release-3.3.1-custom/lwjgl.jar&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.16210938&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.5149425&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;a028fd2e499be15029a800d2974acab4&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$" />
@@ -75,6 +86,9 @@
       <option name="presentableId" value="Default" />
       <updated>1658589931916</updated>
       <workItem from="1658589938085" duration="17942000" />
+      <workItem from="1659975512632" duration="67000" />
+      <workItem from="1661256470484" duration="1954000" />
+      <workItem from="1661258576463" duration="4196000" />
     </task>
     <task id="LOCAL-00001" summary="Setup">
       <created>1658590007852</created>
@@ -97,7 +111,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659009360646</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Using already implemented function to check if cell is null or not">
+      <created>1659975552841</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1659975552841</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
