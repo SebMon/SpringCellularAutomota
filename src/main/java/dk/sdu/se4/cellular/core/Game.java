@@ -29,7 +29,7 @@ public class Game implements ApplicationListener {
     private IInputHandler inputHandler;
     private int hFactor = 1;
     private int wFactor = 1;
-    private final float frameLength = 0.1f;
+    private final float frameLength = 0.05f;
 
     @Override
     public void create() {
@@ -39,8 +39,8 @@ public class Game implements ApplicationListener {
         // Solve this - should not be hard set
         gameData.setWindowHeight(400);
         gameData.setWindowWidth(400);
-        gameData.setGameHeight(400);
-        gameData.setGameWidth(400);
+        gameData.setGameHeight(100);
+        gameData.setGameWidth(100);
 
         hFactor = gameData.getWindowHeight() / gameData.getGameHeight();
         wFactor = gameData.getWindowWidth() / gameData.getGameWidth();
@@ -67,13 +67,17 @@ public class Game implements ApplicationListener {
         // Update delta
         gameData.setDelta(gameData.getDelta() + Gdx.graphics.getDeltaTime());
 
+
         // Update world if unpaused and enough time has passed since last update
         if (!gameData.isPaused() && gameData.getDelta() >= frameLength) {
-            gameData.setDelta(0);
+
             for (IProcessor processor : processors) {
                 processor.process(gameData, world);
             }
+            gameData.setDelta(0);
         }
+
+
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);

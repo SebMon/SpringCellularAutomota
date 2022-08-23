@@ -4,15 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f800104-a1e8-4a93-b910-64722136ea1b" name="Changes" comment="Using already implemented function to check if cell is null or not">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/services/IInputHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/core/GameInputManager.java" afterDir="false" />
+    <list default="true" id="9f800104-a1e8-4a93-b910-64722136ea1b" name="Changes" comment="Fixed game of life setup and added drawing and pausing">
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDCell.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDInput.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDPlugin.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayInput.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayPlugin.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/GameData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/common/data/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/core/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -88,7 +89,7 @@
       <workItem from="1658589938085" duration="17942000" />
       <workItem from="1659975512632" duration="67000" />
       <workItem from="1661256470484" duration="1954000" />
-      <workItem from="1661258576463" duration="4196000" />
+      <workItem from="1661258576463" duration="13332000" />
     </task>
     <task id="LOCAL-00001" summary="Setup">
       <created>1658590007852</created>
@@ -118,7 +119,14 @@
       <option name="project" value="LOCAL" />
       <updated>1659975552841</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed game of life setup and added drawing and pausing">
+      <created>1661262941285</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1661262941285</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -139,6 +147,7 @@
     <MESSAGE value="Setup" />
     <MESSAGE value="Simple conway simulation, and drawing whatever cells are in world" />
     <MESSAGE value="Using already implemented function to check if cell is null or not" />
-    <option name="LAST_COMMIT_MESSAGE" value="Using already implemented function to check if cell is null or not" />
+    <MESSAGE value="Fixed game of life setup and added drawing and pausing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed game of life setup and added drawing and pausing" />
   </component>
 </project>

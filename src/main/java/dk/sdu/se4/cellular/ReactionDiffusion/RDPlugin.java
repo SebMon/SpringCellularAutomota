@@ -1,6 +1,5 @@
-package dk.sdu.se4.cellular.GameOfLife;
+package dk.sdu.se4.cellular.ReactionDiffusion;
 
-import com.badlogic.gdx.graphics.Color;
 import dk.sdu.se4.cellular.common.data.Cell;
 import dk.sdu.se4.cellular.common.data.GameData;
 import dk.sdu.se4.cellular.common.data.Position;
@@ -11,27 +10,39 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Random;
 
-//@Component
-public class ConwayPlugin implements IPlugin {
-    private final Color color = Color.WHITE;
+@Component
+public class RDPlugin implements IPlugin {
     @Override
     public void start(GameData gameData, World world) {
         Random random = new Random();
         HashMap<Position, Cell> cells = new HashMap<>();
         for (int x = 0; x < gameData.getGameWidth(); x++) {
             for (int y = 0; y < gameData.getGameHeight(); y++) {
-                if (random.nextBoolean()) {
-                    cells.put(new Position(x, y), new ConwayCell(new Position(x, y), color));
-                }
+                Position position = new Position(x, y);
+                cells.put(position, new RDCell(position, 1, 0));
             }
         }
+
+
+        int randomX = (int)(gameData.getGameWidth() * random.nextFloat());
+        int randomY = (int)(gameData.getGameHeight() * random.nextFloat());
+        int areaW = gameData.getGameWidth() / 5;
+        int areaH = gameData.getGameHeight() / 5;
+
+        for (int x = randomX; x < (randomX + areaW) && x < gameData.getGameWidth(); x++) {
+            for (int y = randomY; y < (randomY + areaH) && y < gameData.getGameHeight(); y++) {
+                ((RDCell) cells.get(new Position(x, y))).setB(1);
+            }
+        }
+
+
         world.setCells(cells);
     }
 
     @Override
     public void stop(GameData gameData, World world) {
         for (Cell cell : world.getCells()) {
-            if (cell instanceof ConwayCell) {
+            if (cell instanceof RDCell) {
                 world.removeCell(cell.getPos());
             }
         }

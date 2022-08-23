@@ -1,18 +1,15 @@
-package dk.sdu.se4.cellular.GameOfLife;
+package dk.sdu.se4.cellular.ReactionDiffusion;
 
-import com.badlogic.gdx.graphics.Color;
-import dk.sdu.se4.cellular.common.data.Cell;
 import dk.sdu.se4.cellular.common.data.GameData;
 import dk.sdu.se4.cellular.common.data.Position;
 import dk.sdu.se4.cellular.common.data.World;
 import dk.sdu.se4.cellular.common.services.IInputHandler;
 import org.springframework.stereotype.Component;
 
-//@Component
-public class ConwayInput implements IInputHandler {
+@Component
+public class RDInput implements IInputHandler {
     private World world;
     private GameData gameData;
-    private final Color color = Color.WHITE;
 
     @Override
     public void start(GameData gameData, World world) {
@@ -20,14 +17,9 @@ public class ConwayInput implements IInputHandler {
         this.gameData = gameData;
     }
 
-    @Override
     public void leftClick(Position pos) {
-        Cell clickedCell = world.getCell(pos);
-        if (clickedCell == null) {
-            world.putCell(pos, new ConwayCell(pos, color));
-        }
-        else {
-            world.removeCell(pos);
-        }
+        RDCell clickedCell = (RDCell) world.getCell(pos);
+        clickedCell.setB(1);
+        System.out.println(clickedCell.getA() + " " + clickedCell.getB());
     }
 }
