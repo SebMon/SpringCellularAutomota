@@ -4,16 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9f800104-a1e8-4a93-b910-64722136ea1b" name="Changes" comment="Fixed game of life setup and added drawing and pausing">
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDCell.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDInput.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDPlugin.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDProcessor.java" afterDir="false" />
+    <list default="true" id="9f800104-a1e8-4a93-b910-64722136ea1b" name="Changes" comment="Added Reaction-Diffusion, but it is a bit slow and boring. Needs more work">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayInput.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayPlugin.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/GameOfLife/ConwayProcessor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDCell.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDCell.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDInput.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDInput.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDPlugin.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDPlugin.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDProcessor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDProcessor.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/core/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/dk/sdu/se4/cellular/core/Game.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -89,7 +85,11 @@
       <workItem from="1658589938085" duration="17942000" />
       <workItem from="1659975512632" duration="67000" />
       <workItem from="1661256470484" duration="1954000" />
-      <workItem from="1661258576463" duration="13332000" />
+      <workItem from="1661258576463" duration="13505000" />
+      <workItem from="1661773989942" duration="884000" />
+      <workItem from="1662456480340" duration="365000" />
+      <workItem from="1662469268754" duration="5414000" />
+      <workItem from="1662540149313" duration="46000" />
     </task>
     <task id="LOCAL-00001" summary="Setup">
       <created>1658590007852</created>
@@ -126,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1661262941285</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added Reaction-Diffusion, but it is a bit slow and boring. Needs more work">
+      <created>1661272244977</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1661272244977</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -148,6 +155,7 @@
     <MESSAGE value="Simple conway simulation, and drawing whatever cells are in world" />
     <MESSAGE value="Using already implemented function to check if cell is null or not" />
     <MESSAGE value="Fixed game of life setup and added drawing and pausing" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed game of life setup and added drawing and pausing" />
+    <MESSAGE value="Added Reaction-Diffusion, but it is a bit slow and boring. Needs more work" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Reaction-Diffusion, but it is a bit slow and boring. Needs more work" />
   </component>
 </project>

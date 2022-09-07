@@ -19,7 +19,7 @@ public class RDInput implements IInputHandler {
 
     public void leftClick(Position pos) {
         RDCell clickedCell = (RDCell) world.getCell(pos);
-        clickedCell.setB(1);
         System.out.println(clickedCell.getA() + " " + clickedCell.getB());
+        // clickedCell.setB(1);
     }
 }

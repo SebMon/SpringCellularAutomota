@@ -5,6 +5,7 @@ import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.GL20;
 import com.badlogic.gdx.graphics.Pixmap;
 import com.badlogic.gdx.graphics.Texture;
+import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.Sprite;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import dk.sdu.se4.cellular.common.data.Cell;
@@ -29,11 +30,14 @@ public class Game implements ApplicationListener {
     private IInputHandler inputHandler;
     private int hFactor = 1;
     private int wFactor = 1;
-    private final float frameLength = 0.05f;
+    private final float frameLength = 0.01f;
+    private BitmapFont font;
+    private int fps;
 
     @Override
     public void create() {
         batch = new SpriteBatch();
+        font = new BitmapFont();
         gameData = new GameData();
 
         // Solve this - should not be hard set
@@ -51,8 +55,8 @@ public class Game implements ApplicationListener {
             plugin.start(gameData, world);
         }
         inputHandler.start(gameData, world);
-
         Gdx.input.setInputProcessor(new GameInputManager(gameData));
+        fps = 0;
 
     }
 
@@ -64,9 +68,9 @@ public class Game implements ApplicationListener {
     @Override
     public void render() {
         handleInputOfCells();
+
         // Update delta
         gameData.setDelta(gameData.getDelta() + Gdx.graphics.getDeltaTime());
-
 
         // Update world if unpaused and enough time has passed since last update
         if (!gameData.isPaused() && gameData.getDelta() >= frameLength) {
@@ -74,6 +78,7 @@ public class Game implements ApplicationListener {
             for (IProcessor processor : processors) {
                 processor.process(gameData, world);
             }
+            fps = (int) (1 / gameData.getDelta());
             gameData.setDelta(0);
         }
 
@@ -81,6 +86,7 @@ public class Game implements ApplicationListener {
 
         Gdx.gl.glClearColor(0, 0, 0, 1);
         Gdx.gl.glClear(GL20.GL_COLOR_BUFFER_BIT);
+
         Pixmap pmap = new Pixmap(gameData.getWindowWidth(), gameData.getWindowHeight(), Pixmap.Format.RGBA8888);
 
         // Draw each cell to pixmap, use factors to draw cells depending on game size
@@ -96,7 +102,13 @@ public class Game implements ApplicationListener {
         batch.begin();
         sprite.setPosition(0, 0);
         sprite.draw(batch);
+
+        // Write fps
+        font.draw(batch, Integer.toString(fps), 5, gameData.getWindowHeight() - 5);
+
+        // Dispose
         batch.end();
+        texture.dispose();
 
 
     }
@@ -114,6 +126,7 @@ public class Game implements ApplicationListener {
     @Override
     public void dispose() {
         batch.dispose();
+        font.dispose();
         if (texture != null) {
             texture.dispose();
         }

@@ -14,7 +14,6 @@ import java.util.Random;
 public class RDPlugin implements IPlugin {
     @Override
     public void start(GameData gameData, World world) {
-        Random random = new Random();
         HashMap<Position, Cell> cells = new HashMap<>();
         for (int x = 0; x < gameData.getGameWidth(); x++) {
             for (int y = 0; y < gameData.getGameHeight(); y++) {
@@ -23,7 +22,24 @@ public class RDPlugin implements IPlugin {
             }
         }
 
+        // Cross start
+        /*
+        for (int x = gameData.getGameWidth() / 2 - 2; x < gameData.getGameWidth() / 2 + 2; x++) {
+            for (int y = 0; y < gameData.getGameHeight(); y++) {
+                ((RDCell) cells.get(new Position(x, y))).setB(1);
+            }
+        }
+        for (int y = gameData.getGameHeight() / 2 - 2; y < gameData.getGameHeight() / 2 + 2; y++) {
+            for (int x = 0; x < gameData.getGameWidth(); x++) {
+                ((RDCell) cells.get(new Position(x, y))).setB(1);
+            }
+        }
 
+         */
+
+
+        // Random square start
+        Random random = new Random();
         int randomX = (int)(gameData.getGameWidth() * random.nextFloat());
         int randomY = (int)(gameData.getGameHeight() * random.nextFloat());
         int areaW = gameData.getGameWidth() / 5;
@@ -34,6 +50,8 @@ public class RDPlugin implements IPlugin {
                 ((RDCell) cells.get(new Position(x, y))).setB(1);
             }
         }
+
+
 
 
         world.setCells(cells);

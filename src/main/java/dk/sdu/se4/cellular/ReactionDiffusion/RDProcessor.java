@@ -25,8 +25,8 @@ public class RDProcessor implements IProcessor {
                 RDCell cell = (RDCell) world.getCell(pos);
                 RDCell newCell = new RDCell(cell.getPos(), cell.getA(), cell.getB());
 
-                newCell.setA(evaluateA(newCell, world, gameData));
-                newCell.setB(evaluateB(newCell, world, gameData));
+                newCell.setA(evaluateA(newCell, world));
+                newCell.setB(evaluateB(newCell, world));
                 newCell.updateColor();
                 newCells.put(newCell.getPos(), newCell);
             }
@@ -35,14 +35,14 @@ public class RDProcessor implements IProcessor {
 
     }
 
-    private float evaluateA(RDCell cell, World world, GameData gameData) {
+    private float evaluateA(RDCell cell, World world) {
         //return cell.getA() + (rateA * diffuseA(cell, world) - cell.getA() * cell.getB() * cell.getB() + feedRate * (1 - cell.getA())) * gameData.getDelta();
-        return cell.getA() + (rateA * diffuseA(cell, world) - cell.getA() * cell.getB() * cell.getB() + feedRate * (1 - cell.getA()));// * gameData.getDelta();
+        return cell.getA() + (rateA * diffuseA(cell, world) - cell.getA() * cell.getB() * cell.getB() + feedRate * (1 - cell.getA()));
     }
 
-    private float evaluateB(RDCell cell, World world, GameData gameData) {
+    private float evaluateB(RDCell cell, World world) {
         //return cell.getB() + (rateB * diffuseB(cell, world) + cell.getA() * cell.getB() * cell.getB() - (killRate + feedRate) * cell.getB()) * gameData.getDelta();
-        return cell.getB() + (rateB * diffuseB(cell, world) + cell.getA() * cell.getB() * cell.getB() - (killRate + feedRate) * cell.getB());// * gameData.getDelta();
+        return cell.getB() + (rateB * diffuseB(cell, world) + cell.getA() * cell.getB() * cell.getB() - (killRate + feedRate) * cell.getB());
     }
 
     private float diffuseA(RDCell cell, World world) {
