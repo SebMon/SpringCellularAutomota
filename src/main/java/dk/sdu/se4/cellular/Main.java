@@ -54,6 +54,7 @@ public class Main {
         game.setWindowWidth(windowWidth);
         game.setGameHeight(gameHeight);
         game.setGameWidth(gameWidth);
+        game.setSimName(simName);
 
         try {
             new Lwjgl3Application(game, cfg);
