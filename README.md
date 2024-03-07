@@ -10,6 +10,6 @@ The application should be built with Maven using Java 18. There is a Jar availab
 
 Execution of the Jar file could look something like: `java -jar SpringCellularAutomota-1.0.jar reaction_diffusion 800 800 150 150`. 
 
-When the application is running, it is possible to pause the simulation with Spacebar. When the simulation is paused, one can click the canvas to affect the simulation. Unfortunately the Reaction - Diffusion simulation does not show any reaction as it is paused, but cliccking and dragging the mouse will affect it as will be shown when unpaused.
+When the application is running, it is possible to pause the simulation with spacebar. When the simulation is paused, one can click the canvas to affect the simulation. Unfortunately the Reaction-Diffusion simulation does not show any reaction while it is paused, but the effects will be seen when unpausing.
 
-The Reaction Diffusion simulation relies on four parameters which greatly affect how the simulation behaves. Ideally these values should be adjustable as commandline arguments as well, but I did not take the time to implement this. To adjust these and experiment manually, look for the variables `rateA`, `rateB`, `feedRate` and `killRate` in the file `src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDProcessor.java`.
+The Reaction-Diffusion simulation relies on four parameters which greatly affect how the simulation behaves. Ideally these values should be adjustable as commandline arguments as well, but I did not take the time to implement this. To adjust these and experiment manually, look for the variables `rateA`, `rateB`, `feedRate` and `killRate` in the file `src/main/java/dk/sdu/se4/cellular/ReactionDiffusion/RDProcessor.java`.
