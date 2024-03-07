@@ -6,7 +6,7 @@ As it is a beginner project, there are many things that could be improved and ar
 # How to use
 The application should be built with Maven using Java 18. There is a Jar available under releases, which includes all dependencies. Execute with Java 18 to be sure everything works properly. When running the application, the following command line arguments can be entered (in the given order):
 - Simulation: Either 'game_of_life' or 'reaction_diffusion'. Default is the Game of Life
-- Window and game size: 'wWidth wHeight gWidth gHeight'. Default is '400 400 100 100'. Game size cannot exceed window size. Game size should be proportional to window size, I.E. the following will not work '400 600 100 100' but '400 600 100 150' will work. **WARNING:** Using a higher game resolution than 100x100 will exponentially reduce the fps down from 40-60. 
+- Window and game size: 'wWidth wHeight gWidth gHeight'. Default is '400 400 100 100'. Game size cannot exceed window size. Game size should be proportional to window size, I.E. the following will not work '400 600 100 100' but '400 600 100 150' will work. **WARNING:** Using a higher game resolution than 100x100 will exponentially reduce the framerate and resource usage. 
 
 Execution of the Jar file could look something like: `java -jar SpringCellularAutomota-1.0.jar reaction_diffusion 800 800 150 150`. 
 
