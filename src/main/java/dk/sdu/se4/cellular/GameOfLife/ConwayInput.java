@@ -8,7 +8,7 @@ import dk.sdu.se4.cellular.common.data.World;
 import dk.sdu.se4.cellular.common.services.IInputHandler;
 import org.springframework.stereotype.Component;
 
-//@Component
+@Component
 public class ConwayInput implements IInputHandler {
     private World world;
     private GameData gameData;
@@ -29,5 +29,10 @@ public class ConwayInput implements IInputHandler {
         else {
             world.removeCell(pos);
         }
+    }
+
+    @Override
+    public String getSimName() {
+        return "game_of_life";
     }
 }

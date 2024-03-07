@@ -6,4 +6,5 @@ import dk.sdu.se4.cellular.common.data.World;
 public interface IPlugin {
     void start(GameData gameData, World world);
     void stop(GameData gameData, World world);
+    String getSimName();
 }

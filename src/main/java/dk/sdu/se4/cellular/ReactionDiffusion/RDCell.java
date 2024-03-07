@@ -15,7 +15,7 @@ public class RDCell extends Cell {
     }
 
     public void updateColor() {
-        super.setColor(new Color(1, 1, 1, b));
+        super.setColor(new Color(b, b, b, 1));
     }
 
     public float getA() {

@@ -7,4 +7,5 @@ import dk.sdu.se4.cellular.common.data.World;
 public interface IInputHandler {
     void start(GameData gameData, World world);
     void leftClick(Position pos);
+    String getSimName();
 }

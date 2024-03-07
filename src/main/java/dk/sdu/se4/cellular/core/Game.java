@@ -17,7 +17,7 @@ import dk.sdu.se4.cellular.common.services.IPlugin;
 import dk.sdu.se4.cellular.common.services.IProcessor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import java.util.ArrayList;
+import java.util.List;
 
 @Component
 public class Game implements ApplicationListener {
@@ -25,14 +25,22 @@ public class Game implements ApplicationListener {
     private Texture texture;
     private GameData gameData;
     private World world;
-    private final ArrayList<IProcessor> processors = new ArrayList<>();
-    private final ArrayList<IPlugin> plugins = new ArrayList<>();
+    private List<IProcessor> processors;
+    private IProcessor processor;
+    private List<IPlugin> plugins;
+    private IPlugin plugin;
+    private List<IInputHandler> inputHandlers;
     private IInputHandler inputHandler;
     private int hFactor = 1;
     private int wFactor = 1;
-    private final float frameLength = 0.01f;
     private BitmapFont font;
     private int fps;
+
+    private int gameWidth = 100;
+    private int gameHeight = 100;
+    private int windowWidth = 400;
+    private int windowHeight = 400;
+    private String simName = "reaction_diffusion";
 
     @Override
     public void create() {
@@ -40,11 +48,10 @@ public class Game implements ApplicationListener {
         font = new BitmapFont();
         gameData = new GameData();
 
-        // Solve this - should not be hard set
-        gameData.setWindowHeight(400);
-        gameData.setWindowWidth(400);
-        gameData.setGameHeight(100);
-        gameData.setGameWidth(100);
+        gameData.setWindowHeight(windowHeight);
+        gameData.setWindowWidth(windowWidth);
+        gameData.setGameHeight(gameHeight);
+        gameData.setGameWidth(gameWidth);
 
         hFactor = gameData.getWindowHeight() / gameData.getGameHeight();
         wFactor = gameData.getWindowWidth() / gameData.getGameWidth();
@@ -52,12 +59,29 @@ public class Game implements ApplicationListener {
         world = new World();
 
         for (IPlugin plugin : plugins) {
-            plugin.start(gameData, world);
+            if (plugin.getSimName().equalsIgnoreCase(this.simName)) {
+                this.plugin = plugin;
+            }
         }
-        inputHandler.start(gameData, world);
+        for (IInputHandler inputHandler : inputHandlers) {
+            if (inputHandler.getSimName().equalsIgnoreCase(this.simName)) {
+                this.inputHandler = inputHandler;
+            }
+        }
+        for (IProcessor processor : processors) {
+            if (processor.getSimName().equalsIgnoreCase(this.simName)) {
+                this.processor = processor;
+            }
+        }
+        if (processor == null || inputHandler == null || plugin == null) {
+            throw new RuntimeException("Not a valid simulation name. Use 'game_of_life' or 'reaction_diffusion'");
+        }
+
+        this.plugin.start(gameData, world);
+        this.inputHandler.start(gameData, world);
+
         Gdx.input.setInputProcessor(new GameInputManager(gameData));
         fps = 0;
-
     }
 
     @Override
@@ -67,17 +91,18 @@ public class Game implements ApplicationListener {
 
     @Override
     public void render() {
-        handleInputOfCells();
+        if(gameData.isPaused()) {
+            handleInputOfCells();
+        }
 
         // Update delta
         gameData.setDelta(gameData.getDelta() + Gdx.graphics.getDeltaTime());
 
         // Update world if unpaused and enough time has passed since last update
+        float frameLength = 0.01f;
         if (!gameData.isPaused() && gameData.getDelta() >= frameLength) {
 
-            for (IProcessor processor : processors) {
-                processor.process(gameData, world);
-            }
+            processor.process(gameData, world);
             fps = (int) (1 / gameData.getDelta());
             gameData.setDelta(0);
         }
@@ -132,19 +157,20 @@ public class Game implements ApplicationListener {
         }
     }
 
+
     @Autowired
-    public void addProcessor(IProcessor processor) {
-        this.processors.add(processor);
+    public void addProcessors(List<IProcessor> processors) {
+        this.processors = processors;
     }
 
     @Autowired
-    public void addPlugin(IPlugin plugin) {
-        this.plugins.add(plugin);
+    public void addPlugin(List<IPlugin> plugins) {
+        this.plugins = plugins;
     }
 
     @Autowired
-    public void addInputHandler(IInputHandler inputHandler) {
-        this.inputHandler = inputHandler;
+    public void addInputHandler(List<IInputHandler> inputhandlers) {
+        this.inputHandlers = inputhandlers;
     }
 
     public void handleInputOfCells() {
@@ -155,5 +181,45 @@ public class Game implements ApplicationListener {
             int y = (clickedPos.y - (clickedPos.y % hFactor)) / hFactor;
             inputHandler.leftClick(new Position(x, y));
         }
+    }
+
+    public int getGameWidth() {
+        return gameWidth;
+    }
+
+    public void setGameWidth(int gameWidth) {
+        this.gameWidth = gameWidth;
+    }
+
+    public int getGameHeight() {
+        return gameHeight;
+    }
+
+    public void setGameHeight(int gameHeight) {
+        this.gameHeight = gameHeight;
+    }
+
+    public int getWindowWidth() {
+        return windowWidth;
+    }
+
+    public void setWindowWidth(int windowWidth) {
+        this.windowWidth = windowWidth;
+    }
+
+    public int getWindowHeight() {
+        return windowHeight;
+    }
+
+    public void setWindowHeight(int windowHeight) {
+        this.windowHeight = windowHeight;
+    }
+
+    public String getSimName() {
+        return simName;
+    }
+
+    public void setSimName(String simName) {
+        this.simName = simName;
     }
 }

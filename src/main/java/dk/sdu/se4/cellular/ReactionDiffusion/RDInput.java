@@ -19,7 +19,11 @@ public class RDInput implements IInputHandler {
 
     public void leftClick(Position pos) {
         RDCell clickedCell = (RDCell) world.getCell(pos);
-        System.out.println(clickedCell.getA() + " " + clickedCell.getB());
-        // clickedCell.setB(1);
+        clickedCell.setB(1);
+    }
+
+    @Override
+    public String getSimName() {
+        return "reaction_diffusion";
     }
 }

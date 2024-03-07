@@ -54,7 +54,7 @@ public class RDProcessor implements IProcessor {
 
         // top left
         tempCell = (RDCell) world.getCell(new Position(pos.x - 1, pos.y - 1));
-        if (tempCell != null) am += tempCell.getA() * 0.05;
+        if (tempCell != null) am += tempCell.getA() * 0.05f;
 
         // top
         tempCell = (RDCell) world.getCell(new Position(pos.x , pos.y - 1));
@@ -99,7 +99,7 @@ public class RDProcessor implements IProcessor {
 
         // top left
         tempCell = (RDCell) world.getCell(new Position(pos.x - 1, pos.y - 1));
-        if (tempCell != null) bm += tempCell.getB() * 0.05;
+        if (tempCell != null) bm += tempCell.getB() * 0.05f;
 
         // top
         tempCell = (RDCell) world.getCell(new Position(pos.x , pos.y - 1));
@@ -133,5 +133,10 @@ public class RDProcessor implements IProcessor {
         if (tempCell != null) bm += tempCell.getB() * 0.05f;
 
         return bm;
+    }
+
+    @Override
+    public String getSimName() {
+        return "reaction_diffusion";
     }
 }

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Component;
 import java.util.HashMap;
 import java.util.Random;
 
-//@Component
+@Component
 public class ConwayPlugin implements IPlugin {
     private final Color color = Color.WHITE;
     @Override
@@ -35,5 +35,10 @@ public class ConwayPlugin implements IPlugin {
                 world.removeCell(cell.getPos());
             }
         }
+    }
+
+    @Override
+    public String getSimName() {
+        return "game_of_life";
     }
 }

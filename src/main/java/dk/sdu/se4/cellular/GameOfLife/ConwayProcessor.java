@@ -10,7 +10,7 @@ import org.springframework.stereotype.Component;
 
 import java.util.HashMap;
 
-//@Component
+@Component
 public class ConwayProcessor implements IProcessor {
     private final Color color = Color.WHITE;
     @Override
@@ -79,5 +79,10 @@ public class ConwayProcessor implements IProcessor {
         }
 
         return neighbours;
+    }
+
+    @Override
+    public String getSimName() {
+        return "game_of_life";
     }
 }

@@ -40,19 +40,17 @@ public class RDPlugin implements IPlugin {
 
         // Random square start
         Random random = new Random();
-        int randomX = (int)(gameData.getGameWidth() * random.nextFloat());
-        int randomY = (int)(gameData.getGameHeight() * random.nextFloat());
-        int areaW = gameData.getGameWidth() / 5;
-        int areaH = gameData.getGameHeight() / 5;
+        int areaW = gameData.getGameWidth() / 2;
+        int areaH = gameData.getGameHeight() / 2;
+
+        int randomX = (int)((gameData.getGameWidth() - areaW) * random.nextFloat());
+        int randomY = (int)((gameData.getGameHeight() - areaH) * random.nextFloat());
 
         for (int x = randomX; x < (randomX + areaW) && x < gameData.getGameWidth(); x++) {
             for (int y = randomY; y < (randomY + areaH) && y < gameData.getGameHeight(); y++) {
                 ((RDCell) cells.get(new Position(x, y))).setB(1);
             }
         }
-
-
-
 
         world.setCells(cells);
     }
@@ -64,5 +62,10 @@ public class RDPlugin implements IPlugin {
                 world.removeCell(cell.getPos());
             }
         }
+    }
+
+    @Override
+    public String getSimName() {
+        return "reaction_diffusion";
     }
 }

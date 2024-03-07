@@ -24,4 +24,10 @@ public class GameInputManager extends InputAdapter {
         gameData.setClickedPos(new Position(screenX, screenY));
         return true;
     }
+
+    @Override
+    public boolean touchDragged(int screenX, int screenY, int pointer) {
+        gameData.setClickedPos((new Position(screenX, screenY)));
+        return true;
+    }
 }
